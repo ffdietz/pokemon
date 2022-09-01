@@ -10,3 +10,5 @@ const colors = {
 }
 
 export const theme = extendTheme({ colors })
+
+export default theme
