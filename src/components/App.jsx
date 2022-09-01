@@ -13,23 +13,16 @@ function App() {
         setPokemons(list);
         setLoading(false);
       })
+      // .then( console.log('pokemons', pokemons))
       .catch(error => console.error(error));
-  })
-
-  useEffect(() => {
-    if(pokemons) {
-      getPokemonDetails()
-        .then((res) => {
-          // setUserRepos(res);
-        })
-        .catch(error => console.error(error));
-    }
-  }, [pokemons])
+  }, [isLoading])
 
   return (
     <>
       <Navbar/>
-      <Pokemon/>
+      {isLoading &&
+        <Pokemon pokemons={pokemons} />
+      }
     </>
   )
 }

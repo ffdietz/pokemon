@@ -3,7 +3,13 @@ import { Flex } from '@chakra-ui/react'
 import PokemonIndex from './PokemonIndex'
 import PokemonDetails from './PokemonDetails'
 
-const Pokemon = () => {
+const Pokemon = ({ pokemons }) => {
+  const [list, setList] = useState(pokemons);
+
+  useEffect(() => {
+    setList(pokemons);
+  }, [list])
+
   return (
     <>
       <Flex width='100vw' height='100vh' overflow='hidden' alignItems='center' justifyContent='center'>
