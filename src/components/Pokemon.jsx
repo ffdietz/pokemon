@@ -22,7 +22,7 @@ const Pokemon = () => {
 
   return (
     <>
-      <Flex width='100vw' height='100vh' overflow='hidden' alignItems='center' justifyContent='center'>
+      <Flex width='100vw' height='100vh' overflowX='hidden' alignItems='center' justifyContent='center'>
         <Flex width='80%' height='70%' borderWidth='1px' borderRadius='lg' marginTop='10vh' justifyContent='space-between'>
           <PokemonIndex pokemons={pokemons} />
           <PokemonDetails/>

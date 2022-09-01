@@ -4,6 +4,7 @@ import { Box } from '@chakra-ui/react'
 
 const PokemonDetails = () => {
   const params = useParams();
+  
 
   return (
     <Box width='45%' borderWidth='1px' borderRadius='lg'>

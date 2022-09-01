@@ -6,13 +6,19 @@ const PokemonIndex = ({ pokemons }) => {
   console.log('PokemonIndex', pokemons)
 
   return (
-    <Box width='45%' height='100%' borderWidth='1px' borderRadius='lg'>
+    <Box width='45%' height='100%' borderWidth='1px' borderRadius='lg' overflow='scroll' overflowX='hidden'>
       <div>
         PokemonIndex
       </div>
       {
         pokemons.map((pokemon) => {
-          return <div>{pokemon.name}</div>
+          return (
+            <div>
+              <NavLink to={`/pokemon/${pokemon.name}`}>
+                {pokemon.name}
+              </NavLink>
+            </div>
+        )
         })
       }
     </Box>
