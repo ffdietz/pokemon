@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getPokemonsList } from '../api/apiClient';
+import { getPokemonsList, getPokemonDetails } from '../api/apiClient';
 import Navbar from './Navbar';
 import Pokemon from './Pokemon';
 
@@ -24,7 +24,7 @@ function App() {
         })
         .catch(error => console.error(error));
     }
-  }, [user, userDetails])
+  }, [pokemons])
 
   return (
     <>

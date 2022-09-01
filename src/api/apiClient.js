@@ -4,15 +4,21 @@ const client = axios.create({
   baseURL: 'https://pokeapi.co/api/v2/'
 })
 
+const LIMIT: number = 5;
 
 export const getPokemonsList = async () => {
-  const {data} = await client.get(`pokemon/?offset=20&limit=5`);
+  const { data } = await client.get(`pokemon/?offset=20&limit=${LIMIT}`);
   return data.results
 }
 
 
-export const getPokemonDetails = async (user) => {
-  const response = await client.get(`users/${user}`);
+export const getPokemonDetails = async (pokemon) => {
+  const pokemonData = await client.get(`pokemon/${pokemon}`)
 
-  return response.data
+  const pokemonSpeciesData = await client.get(`pokemon-species/${pokemon}`)
+
+  return {
+    pokemonData,
+    pokemonSpeciesData,
+  }
 }
