@@ -1,11 +1,12 @@
-import './App.css';
+import Navbar from './Navbar';
+import PokemonViewer from './PokemonViewer';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Navbar/>
-      <Viewer/>
-    </div>
+      <PokemonViewer/>
+    </>
   );
 }
 
