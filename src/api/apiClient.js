@@ -4,7 +4,7 @@ const client = axios.create({
   baseURL: 'https://pokeapi.co/api/v2/'
 })
 
-const FROM = 0;
+const FROM = 200;
 const LIMIT = 400;
 
 export const getPokemonsList = async () => {

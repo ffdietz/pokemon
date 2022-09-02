@@ -19,22 +19,23 @@ const PokemonDetails = () => {
           pokemon: pokemonData.data,
           species: pokemonSpeciesData.data
         })
-        console.log('details', details)
         setThisPokemon(pokemon);
         setLoading(false);
       })
-      // .then( console.log('pokemon', thisPokemon))
       .catch(error => console.error(error));
     
   }, [name, isLoading])
 
-  console.log('thisPokemon', thisPokemon)
+  console.log('thisPokemon', thisPokemon);
+
 
   return (
-    <Box width='45%' borderWidth='1px' borderRadius='lg'>
+    <Box width='60%' borderWidth='1px' borderRadius='lg' overflow='scroll' overflowX='hidden'>
       {
         !isLoading &&
         <>
+          {/* <Cover/> */}
+          {/* <Details/> */}
           <Heading as='h2' size='3xl'>
               {thisPokemon.name.toUpperCase()}
           </Heading>
@@ -42,6 +43,10 @@ const PokemonDetails = () => {
               {thisPokemon.id}
           </Heading>
           <Image boxSize='200px' src={thisPokemon.svg} alt='pokeImage'/>
+          <Heading as='h2' size='3xl'>
+            {thisPokemon.namejp}
+          </Heading>
+          <Image boxSize='200px' src={thisPokemon.image} alt='pokeImage' />
         </>
       }
     </Box>
