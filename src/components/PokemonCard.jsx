@@ -44,7 +44,8 @@ const PokemonCard = () => {
         !isLoading &&
         <MotionFlex
           initial={{opacity: 0}}
-          animate={{opacity: 1}}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
         >
             <PokemonCover pokemon={thisPokemon} />
             <PokemonDetails pokemon={thisPokemon} />
