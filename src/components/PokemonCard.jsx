@@ -40,7 +40,7 @@ const PokemonCard = () => {
       {
         !isLoading &&
           <>
-            {/* <PokemonCover pokemon={thisPokemon} /> */}
+            <PokemonCover pokemon={thisPokemon} />
             <PokemonDetails pokemon={thisPokemon} />
           </>
       }
