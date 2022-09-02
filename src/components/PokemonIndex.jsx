@@ -12,9 +12,8 @@ const PokemonIndex = ({ pokemons }) => {
   return (
     <Box width='35%' height='100%' borderWidth='1px' borderRadius='lg' overflow='scroll' overflowX='hidden'>
       
-      <Input placeholder='find you pokemon' size='lg' width='auto'
-        onChange={ handleFilter} position='fixed' background='#FFF'/>
-
+      <Input onChange={handleFilter} placeholder='search...' size='lg' width='30%' fontSize='1.5rem' color='black'
+        position='fixed' background='#FFF'/>
       <Box>
         { pokemons &&
           pokemons.map((pokemon, key) => {
@@ -22,7 +21,7 @@ const PokemonIndex = ({ pokemons }) => {
               pokemon.name.includes(filter)&&
               <div key={key}>
                 <NavLink to={`/pokemon/${pokemon.name}`} >
-                  <Text fontSize='2.5rem'>
+                  <Text fontSize='2.5rem' color='grey' borderWidth='1px' borderRadius='5' padding='0.3em'>
                     {pokemon.name}
                   </Text>
                 </NavLink>
