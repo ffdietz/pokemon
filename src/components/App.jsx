@@ -2,16 +2,16 @@ import { Routes, Route } from 'react-router-dom'
 
 import Navbar from './Navbar';
 import Pokemon from './Pokemon';
-import PokemonDetails from './PokemonDetails';
+import PokemonCard from './PokemonCard';
 
 function App() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Pokemon />}>
-          <Route path='pokemon/:name' element={<PokemonDetails/>}></Route>
-        </Route>        
+          <Route path='pokemon/:name' element={<PokemonCard />}></Route>
+        </Route>
       </Routes>
     </>
   )

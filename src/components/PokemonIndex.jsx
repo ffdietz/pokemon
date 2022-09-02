@@ -9,10 +9,10 @@ const PokemonIndex = ({ pokemons }) => {
       <input>
       </input>
       {
-        pokemons.map((pokemon) => {
+        pokemons.map((pokemon, key) => {
           return (
-            <div>
-              <NavLink to={`/pokemon/${pokemon.name}`}>
+            <div key={key}>
+              <NavLink to={`/pokemon/${pokemon.name}`} >
                 {pokemon.name}
               </NavLink>
             </div>

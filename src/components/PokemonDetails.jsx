@@ -1,54 +1,27 @@
-import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom';
-import { Box, Heading, Image } from '@chakra-ui/react'
-import { useState } from 'react';
-import { getPokemonDetails } from '../api/apiClient';
-import { normalizeDetails } from '../utils/normalizeDetails';
+import { Box, Text, Flex } from '@chakra-ui/react';
+import React from 'react'
 
-const PokemonDetails = () => {
-  const params = useParams();
-  const name = params.name;
-  const [thisPokemon, setThisPokemon] = useState([]);
-  const [isLoading, setLoading] = useState(true);
-
-  useEffect(() => {
-    getPokemonDetails(name)
-      .then(details => {
-        const { pokemonData, pokemonSpeciesData } = details;
-        const pokemon = normalizeDetails({
-          pokemon: pokemonData.data,
-          species: pokemonSpeciesData.data
-        })
-        setThisPokemon(pokemon);
-        setLoading(false);
-      })
-      .catch(error => console.error(error));
-    
-  }, [name, isLoading])
-
-  console.log('thisPokemon', thisPokemon);
-
-
+const PokemonDetails = ({ pokemon }) => {
+  console.log('pokemon :>> ', pokemon);
   return (
-    <Box width='60%' borderWidth='1px' borderRadius='lg' overflow='scroll' overflowX='hidden'>
-      {
-        !isLoading &&
-        <>
-          {/* <Cover/> */}
-          {/* <Details/> */}
-          <Heading as='h2' size='3xl'>
-              {thisPokemon.name.toUpperCase()}
-          </Heading>
-          <Heading as='h2' size='3xl'>
-              {thisPokemon.id}
-          </Heading>
-          <Image boxSize='200px' src={thisPokemon.svg} alt='pokeImage'/>
-          <Heading as='h2' size='3xl'>
-            {thisPokemon.namejp}
-          </Heading>
-          <Image boxSize='200px' src={thisPokemon.image} alt='pokeImage' />
-        </>
-      }
+    <Box>
+      {/* descripcion */}
+      <Text>
+        {pokemon.description}
+      </Text>
+      
+      {/* types */}
+      <Flex >
+        { pokemon.types.map((t, key) => {
+          return (
+            <Box width='100px' padding='0.2rem' borderWidth='1px' borderRadius='3px' textAlign='center' margin='2px'>
+              <Text>{t.type.name.toUpperCase()}</Text>
+            </Box>
+          )})
+        }
+      </Flex>
+
+      
     </Box>
   )
 }

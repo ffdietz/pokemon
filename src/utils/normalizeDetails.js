@@ -1,10 +1,6 @@
-import getDetails from "./getStats";
-
+import getDetails from "./getDetails";
 
 export const normalizeDetails = ({ pokemon, species }) => {
-  console.log('pokemon', pokemon);
-  console.log('species', species);
-
   const data = {
     id:     pokemon.id,
     name:   pokemon.name,
