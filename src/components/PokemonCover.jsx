@@ -2,8 +2,6 @@ import React from 'react'
 import { Flex, Heading, Image } from '@chakra-ui/react'
 
 const PokemonCover = ({ pokemon }) => {
-
-  console.log('pokemon', pokemon)
   
   return (
     <>
