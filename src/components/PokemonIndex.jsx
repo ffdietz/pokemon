@@ -12,8 +12,8 @@ const PokemonIndex = ({ pokemons }) => {
   return (
     <Box width='35%' height='100%' borderWidth='1px' borderRadius='lg' overflow='scroll' overflowX='hidden'>
       
-      <Input placeholder='find you pokemon' size='lg'
-        onChange={ handleFilter} />
+      <Input placeholder='find you pokemon' size='lg' width='auto'
+        onChange={ handleFilter} position='fixed' background='#FFF'/>
 
       <Box>
         { pokemons &&

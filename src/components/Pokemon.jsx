@@ -16,14 +16,13 @@ const Pokemon = () => {
         setPokemons(list);
         setLoading(false);
       })
-      // .then( console.log('pokemons', pokemons))
       .catch(error => console.error(error));
   }, [isLoading])
 
   return (
     <>
       <Flex width='100vw' height='100vh' overflowX='hidden' alignItems='center' justifyContent='center'>
-        <Flex width='90%' height='80%' borderWidth='1px' borderRadius='lg' marginTop='10vh' justifyContent='space-between'>
+        <Flex width='90%' height='80%' marginTop='10vh' justifyContent='space-between'>
           <PokemonIndex pokemons={pokemons} />
           <PokemonCard />
         </Flex>

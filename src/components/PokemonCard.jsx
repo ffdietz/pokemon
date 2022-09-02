@@ -36,7 +36,8 @@ const PokemonCard = () => {
 
 
   return (
-    <Box width='60%' borderWidth='1px' borderRadius='lg' overflow='scroll' overflowX='hidden'>
+    <Box width='60%'
+      position='relative'>
       {
         !isLoading &&
           <>
