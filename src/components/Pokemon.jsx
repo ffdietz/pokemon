@@ -5,6 +5,7 @@ import { Flex } from '@chakra-ui/react'
 
 import PokemonIndex from './PokemonIndex'
 import PokemonCard from './PokemonCard'
+import { AnimatePresence } from 'framer-motion';
 
 const Pokemon = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -24,7 +25,9 @@ const Pokemon = () => {
       <Flex width='100vw' height='100vh' overflowX='hidden' alignItems='center' justifyContent='center'>
         <Flex width='90%' height='80%' marginTop='10vh' justifyContent='space-between'>
           <PokemonIndex pokemons={pokemons} />
-          <PokemonCard />
+          <AnimatePresence>
+            <PokemonCard />
+          </AnimatePresence>
         </Flex>
       </Flex>
     </>

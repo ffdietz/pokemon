@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
+import { motion } from 'framer-motion'
 
-import { Box } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 
 import { getPokemonDetails } from '../api/apiClient';
 import { normalizeDetails } from '../utils/normalizeDetails';
@@ -16,6 +17,7 @@ const PokemonCard = () => {
   const name = params.name;
   const [thisPokemon, setThisPokemon] = useState([]);
   const [isLoading, setLoading] = useState(true);
+  const MotionFlex = motion(Flex);
 
   useEffect(() => {
     getPokemonDetails(name)
@@ -40,10 +42,13 @@ const PokemonCard = () => {
       position='relative'>
       {
         !isLoading &&
-          <>
+        <MotionFlex
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+        >
             <PokemonCover pokemon={thisPokemon} />
             <PokemonDetails pokemon={thisPokemon} />
-          </>
+        </MotionFlex>
       }
     </Box>
   )
